@@ -34,9 +34,9 @@ OBS: A montagem pode ser realizada no Tinkercad ou em ambiente físico, seguindo
 
 #### Capturas de Tela e Vídeos:
 
-- **Circuito montado no Tinkercad:** (inserir link ou imagens do circuito)
-- **Vídeo de Demonstração do funcionamento:** (inserir link para vídeo)
-- **Sequência das luzes e acionamento do botão.**
+- **Circuito montado no Tinkercad:** 
+- **Vídeo de Demonstração do funcionamento:** [(inserir link para vídeo)](https://youtu.be/4p1M9Yjtgys?si=4X4o2nIonYbxGR5h)
+- **Sequência das luzes e acionamento do botão.** VERDE-AMARELO-VERMELHO
 
 ### Referências
 
