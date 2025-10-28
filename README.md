@@ -1,7 +1,9 @@
 
-# Semáforo-Arduino-Botão
+# Semáforo-Arduino
 
-Este repositório documenta o desenvolvimento de um semáforo utilizando Arduino, incorporando um botão para travessia segura de pedestres. O objetivo principal é controlar o fluxo de veículos e pedestres em uma via, onde o semáforo permanece aberto para os veículos e só fecha quando o botão do pedestre é pressionado, garantindo uma travessia segura.
+Este repositório documenta o desenvolvimento de um semáforo utilizando Arduino, incorporando um semaforo normal e um semafaro com um botão para travessia segura de pedestres. O objetivo principal é controlar o fluxo de veículos e pedestres em uma via, onde o semáforo permanece aberto para os veículos e só fecha quando o botão do pedestre é pressionado, garantindo uma travessia segura.
+
+
 
 ## Etapas Realizadas
 
@@ -35,7 +37,7 @@ OBS: A montagem pode ser realizada no Tinkercad ou em ambiente físico, seguindo
 #### Capturas de Tela e Vídeos:
 
 - **Circuito montado no Tinkercad:** 
-- **Vídeo de Demonstração do funcionamento:** [(inserir link para vídeo)](https://youtu.be/4p1M9Yjtgys?si=4X4o2nIonYbxGR5h)
+- **Vídeo de Demonstração do funcionamento:** [(Link do video de demonstração)](https://youtu.be/4p1M9Yjtgys?si=4X4o2nIonYbxGR5h)
 - **Sequência das luzes e acionamento do botão.** VERDE-AMARELO-VERMELHO
 
 ### Referências
