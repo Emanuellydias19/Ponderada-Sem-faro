@@ -142,6 +142,15 @@ void loop() {
   avancarSemaforo();
 }
 ```
+
+<br>
+
+ ![Thiinkercad funcionamento com o botão](assets/Thinkercad.png)
+
+ <br>
+
+O botão funciona como um dispositivo de acionamento que permite ao pedestre solicitar a travessia segura. Enquanto o botão não é pressionado, o semáforo permanece aberto para o fluxo de veículos, mantendo o sinal verde para carros e vermelho para pedestres. Quando o pedestre aperta o botão, o sistema detecta essa ação e muda a lógica do semáforo para fechar o trânsito de veículos (sinal vermelho para carros) e abrir o sinal para travessia dos pedestres (sinal verde para pedestres), garantindo que eles possam atravessar com segurança. Após o tempo determinado para a travessia, o semáforo retorna ao estado normal, sempre aberto para os veículos até que o botão seja pressionado novamente. A resistência de 10 kΩ é usada para estabilizar o sinal do botão e evitar leituras falsas provocadas por ruídos elétricos.
+
 <br>
 <br>
 
@@ -150,11 +159,6 @@ void loop() {
 Este código implementa um semáforo de trânsito que alterna automaticamente entre as cores Verde, Amarelo e Vermelho, sem nunca "travar" o Arduino. Ele usa o conceito de Máquina de Estados e o tempo do sistema (`millis()`) para ser Não-Bloqueante.
 
 ---
-
-
-foto protobooard:
-
-
 
 ### 1. Definições Iniciais (Setup)
 
