@@ -3,6 +3,7 @@
 
 Este repositório documenta o desenvolvimento de um semáforo utilizando Arduino, incorporando um semaforo normal e um semafaro com um botão para travessia segura de pedestres. O objetivo principal é controlar o fluxo de veículos e pedestres em uma via, onde o semáforo permanece aberto para os veículos e só fecha quando o botão do pedestre é pressionado, garantindo uma travessia segura.
 
+![Uploading foto read-me.jpeg…]()
 
 
 ## Etapas Realizadas
