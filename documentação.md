@@ -43,21 +43,11 @@ const int PIN_AMARELO = 9;
 const int PIN_VERDE = 8;
 const int PIN_BOTAO = 12;
 
-// Variáveis de Controle de Tempo do Semáforo
+const int leds[] = {PIN_VERMELHO, PIN_AMARELO, PIN_VERDE};
+const long tempos[] = {4000, 2000, 6000};
 
 unsigned long tempoAnteriorSemaforo = 0;
-
-// O tempo inicial será de 6000ms (Verde)
-
 long intervaloSemaforo = 6000; 
-
-// Variáveis da Máquina de Estados do Semáforo
-
-const int leds[] = {PIN_VERMELHO, PIN_AMARELO, PIN_VERDE};
-
-// Ordem: {VERDE, AMARELO, VERMELHO} 
-const long tempos[] = {4000, 2000, 6000}; 
-
 int estadoAtual = 2; 
 bool cicloAtivo = false;
 
@@ -68,7 +58,6 @@ const long INTERVALO_DEBOUNCE = 50;
 int estadoFinalBotao = HIGH;      
 unsigned long tempoUltimaMudanca = 0;
 int ultimoEstadoBotao = HIGH;
-
 
 
 // 3. Função de Lógica do Botão (Máquina de Estados de Debounce)
@@ -96,24 +85,15 @@ void lerBotao() {
 
 
 // 4. Função que Inicia a Transição do Semáforo
-
 void acionarSemaforo() {
-  // Só aciona se o semáforo estiver no estado inicial (VERDE) e inativo.
-
   if (!cicloAtivo && estadoAtual == 2) {
     
-    // Inicia o ciclo, pulando o Verde para o Amarelo (estado 1)
-
     estadoAtual = 1; 
     cicloAtivo = true;
     
-    // Configura o tempo e a cor do novo estado (Amarelo = 2000ms)
-
     tempoAnteriorSemaforo = millis();
     intervaloSemaforo = tempos[estadoAtual];
     
-    // Liga o Amarelo
-
     digitalWrite(PIN_VERDE, LOW);
     digitalWrite(PIN_AMARELO, HIGH);
     digitalWrite(PIN_VERMELHO, LOW);
@@ -136,10 +116,8 @@ void avancarSemaforo() {
         cicloAtivo = false;          
       }
       
-      // Define o tempo do novo estado com o valor do array `tempos`
       intervaloSemaforo = tempos[estadoAtual];
 
-      // Atualiza os LEDs com base no novo estado
       digitalWrite(PIN_VERMELHO, (estadoAtual == 0) ? HIGH : LOW);
       digitalWrite(PIN_AMARELO, (estadoAtual == 1) ? HIGH : LOW);
       digitalWrite(PIN_VERDE, (estadoAtual == 2) ? HIGH : LOW);
@@ -164,7 +142,8 @@ void loop() {
   avancarSemaforo();
 }
 ```
-
+<br>
+<br>
 
 ### 🚦 Explicação Didática: Semáforo Não-Bloqueante
 
@@ -172,9 +151,14 @@ Este código implementa um semáforo de trânsito que alterna automaticamente en
 
 ---
 
-## 1. Definições Iniciais (Setup)
 
-### Variáveis Essenciais
+foto protobooard:
+
+
+
+### 1. Definições Iniciais (Setup)
+
+#### Variáveis Essenciais
 
 - **Pinos:** Definem a conexão de cada LED no seu Arduino (Ex: `PIN_VERMELHO = 10`).
 - **Estados:** Definem os identificadores numéricos para as cores: `ESTADO_VERMELHO (0)`, `ESTADO_AMARELO (1)`, `ESTADO_VERDE (2)`.
@@ -212,27 +196,26 @@ text
 - Subtração: A diferença (`millis() - tempoAnteriorSemaforo`) é quanto tempo se passou desde o início do estado.  
 - Comparação: Se o tempo que se passou for maior ou igual ao tempo que o estado deveria durar (`intervaloSemaforo`), a condição é verdadeira e o semáforo avança!
 
-🔑 **Por que é Não-Bloqueante?**  
+**Por que é Não-Bloqueante?**  
 Porque ele não espera! O código simplesmente verifica a condição (`if`) e segue em frente. Se for verdadeiro, ele muda; se for falso, ele ignora o bloco de código e passa para a próxima instrução no `loop()`.
 
-### Lógica de Mudança de Estado
+#### Lógica de Mudança de Estado
 
 Quando é hora de mudar, três coisas acontecem:  
 - Atualiza o Cronômetro: `tempoAnteriorSemaforo = millis();` – Isso "reinicia" a contagem de tempo para o próximo estado que está entrando.  
 - Avança o Estado:
 indiceSequenciaAtual = (indiceSequenciaAtual + 1) % TOTAL_ESTADOS;
 
-text
+
 Avança o ponteiro para o próximo item no roteiro (Verde → Amarelo → Vermelho → Verde...). O operador de módulo (%) garante que, ao chegar no final, ele volte para o início.  
 - Atualiza os LEDs: O código usa o Operador Ternário para de forma compacta acender a luz do estado atual e apagar as outras:
 digitalWrite(PIN_VERMELHO, (estadoAtual == ESTADO_VERMELHO) ? HIGH : LOW);
 
-text
 (Se for o estado Vermelho, acende; senão, apaga).
 
 ---
 
-## 3. O Loop Infinito (`loop()`)
+#### 3. O Loop Infinito (`loop()`)
 
 A função `loop()` é a alma de todo código Arduino. No seu programa, ela é muito simples:
 
@@ -246,7 +229,7 @@ A única coisa que o Arduino faz, trilhões de vezes por segundo, é chamar a fu
 
 ---
 
-## Conclusão
+#### Conclusão
 
 O Arduino não está "parado, esperando" por 6 segundos. Ele está executando o `loop()` rapidamente, e a cada execução, ele pergunta: "O tempo expirou?" Ele só entra no bloco de mudança de estado quando a resposta é "Sim". Isso garante que ele esteja sempre pronto para executar outras tarefas, se você as adicionasse ao `loop()`.
 
