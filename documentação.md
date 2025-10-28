@@ -362,3 +362,30 @@ void loop() {
 }
 
 ```
+
+````
+<BR>
+<BR>
+
+### Tabela de Avaliação entre Pares
+
+##### Avaliador: Livia Oliveira
+
+| Critério                                                                 | Contempla (Pontos) | Contempla Parcialmente (Pontos) | Não Contempla (Pontos) | Observações do Avaliador                                                                                                  |
+|--------------------------------------------------------------------------|--------------------|---------------------------------|-----------------------|--------------------------------------------------------------------------------------------------------------------------|
+| Montagem física com cores corretas, boa disposição dos fios e uso adequado de resistores | Até 3              | Até 1,5                         | 0                     | Circuito montado com clareza e organização. Uso de resistores de valor adequado (220 Ω) em série com cada LED, conforme boas práticas de eletrônica. |
+| Temporização adequada conforme tempos medidos com auxílio de algum instrumento externo      | Até 3              | Até 1,5                         | 0                     | A medição externa confirma a precisão dos tempos configurados (4s Vermelho, 2s Amarelo, 6s Verde), garantindo a fidelidade do ciclo.               |
+| Código implementa corretamente as fases do semáforo e estrutura do código (variáveis representativas e comentários) | Até 3              | Até 1,5                         | 0                     | Implementação robusta de Máquina de Estados. Variáveis com nomes lógicos (tempos[], estadoAtual) e estrutura de código eficiente.                  |
+| Ir além: Implementou um componente de extra, fez com millis() ao invés do delay() e/ou usou ponteiros no código                  | Até 1              | Até 0,5                         | 0                     | O uso da função millis() confirma uma programação não-bloqueante, característica essencial para projetos embarcados.                                 |
+|                                                                          |                    |                                 |                       | **Pontuação Total: 10,0 / 10**                                                                                              |
+
+##### Avaliador: Nicolli Vinino 
+
+
+| Critério                                                                 | Contempla (Pontos) | Contempla Parcialmente (Pontos) | Não Contempla (Pontos) | Pontuação Atribuída | Observações do Avaliador                                                                                                          |
+|--------------------------------------------------------------------------|--------------------|---------------------------------|-----------------------|---------------------|----------------------------------------------------------------------------------------------------------------------------------|
+| Montagem física com cores corretas, boa disposição dos fios e uso adequado de resistores | Até 3              | Até 1,5                         | 0                     | 3,0                 | A disposição física demonstra planejamento, com fiação limpa e polaridade dos LEDs correta, validando a integridade do circuito. |
+| Temporização adequada conforme tempos medidos com auxílio de algum instrumento externo      | Até 3              | Até 1,5                         | 0                     | 3,0                 | A transição de estados ocorre exatamente nos intervalos programados (6s, 2s, 4s), atendendo rigorosamente às especificações de temporização. |
+| Código implementa corretamente as fases do semáforo e estrutura do código (variáveis representativas e comentários) | Até 3              | Até 1,5                         | 0                     | 3,0                 | A lógica sequencial (Verde → Amarelo → Vermelho) foi implementada de maneira eficaz, com código coeso e de fácil manutenção.        |
+| Ir além: Implementou um componente de extra, fez com millis() ao invés do delay() e/ou usou ponteiros no código                  | Até 1              | Até 0,5                         | 0                     | 1,0                 | A decisão de evitar o delay() em favor de millis() aumenta a responsividade do sistema, qualificando o critério "Ir Além".          |
+|                                                                          |                    |                                 |                       |                     | **Pontuação Total: 10,0 / 10**                                                                                                  |
